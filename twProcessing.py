@@ -7,4 +7,5 @@ with open('twitter@realDonaldTrump.txt', 'r') as f:
     for line in f:
         tweet = json.loads(line)
         tokens = word_tokenize(tweet['text'].lower())
-        print tokens
+        count_all.update(tokens)
+    print(count_all.most_common(5))
